@@ -1,6 +1,5 @@
 """辅助接口路由"""
 from fastapi import APIRouter
-from datetime import datetime
 
 from src.core.config import settings
 from src.schemas.common import SuccessResponse, HealthStatus, MetricsResponse

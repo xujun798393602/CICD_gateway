@@ -1,12 +1,12 @@
 """报告生成服务"""
 import uuid
 from datetime import datetime
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.models import ScanTask, ScanResult, IssueDetail
+from src.models import ScanTask, ScanResult
 
 
 class ReportService:
@@ -40,10 +40,9 @@ class ReportService:
         report_id = self._generate_report_id()
 
         # 查询扫描结果
-        results = await self.db.execute(
+        await self.db.execute(
             select(ScanResult).where(ScanResult.scan_id == scan_id)
         )
-        scan_results = results.scalars().all()
 
         # 构建摘要
         gate_passed = task.gate_status == "passed" if task.gate_status else False
@@ -125,13 +124,13 @@ class ReportService:
 
         # 分页
         offset = (page - 1) * page_size
-        paginated_tasks = all_tasks[offset : offset + page_size]
+        paginated_tasks = all_tasks[offset:offset + page_size]
 
         items = []
         for task in paginated_tasks:
             if task.report_url:
                 report_id = task.report_url.split("/")[-1]
-                gate_passed = task.gate_status == "passed" if task.gate_status else False
+                gate_passed = (task.gate_status == "passed") if task.gate_status else False
                 items.append(
                     {
                         "report_id": report_id,

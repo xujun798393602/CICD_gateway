@@ -4,11 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Optional
 
 from src.core.database import get_db
-from src.schemas.report import (
-    ReportGenerateRequest,
-    ReportResponse,
-    ReportListResponse,
-)
+from src.schemas.report import ReportGenerateRequest
 from src.schemas.common import SuccessResponse
 from src.services.report_service import ReportService
 

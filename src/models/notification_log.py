@@ -1,6 +1,6 @@
 """通知记录数据模型"""
 from sqlalchemy import (
-    Column, BigInteger, String, Integer, Text, DateTime, func, Index
+    Column, String, Integer, Text, DateTime, func, Index
 )
 from src.core.database import Base
 

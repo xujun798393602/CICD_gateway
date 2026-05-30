@@ -6,9 +6,6 @@ from src.core.database import get_db
 from src.schemas.scan import (
     ScanTriggerRequest,
     ScanResultRequest,
-    ScanTriggerResponse,
-    ScanStatusResponse,
-    ScanResultResponse,
 )
 from src.schemas.common import SuccessResponse
 from src.services.scan_service import ScanService

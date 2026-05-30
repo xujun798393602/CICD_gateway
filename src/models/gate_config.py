@@ -1,6 +1,6 @@
 """门禁配置数据模型"""
 from sqlalchemy import (
-    Column, BigInteger, String, Integer, Boolean, Text, DateTime, JSON, func, Index,
+    Column, String, Integer, Boolean, Text, DateTime, JSON, func, Index,
     UniqueConstraint,
 )
 from src.core.database import Base

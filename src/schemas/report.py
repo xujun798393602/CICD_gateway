@@ -1,7 +1,6 @@
 """报告相关Schema定义"""
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
-from datetime import datetime
 
 
 class ReportGenerateRequest(BaseModel):

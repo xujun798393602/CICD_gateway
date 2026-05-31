@@ -1,0 +1,54 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 测试
+test.db
+tests/
+
+# 文档
+doc/
+
+# 日志
+*.log
+logs/
+
+# 环境变量
+.env
+.env.local
+
+# 报告
+reports/
+
+# 备份
+backups/
+
+# 部署配置（不需要在镜像中）
+deploy/
+scripts/
